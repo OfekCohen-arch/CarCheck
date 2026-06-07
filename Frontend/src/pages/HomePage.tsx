@@ -45,13 +45,8 @@ export function HomePage(){
     style={{fontFamily: "'Heebo',sans-serif"}}
     dir="rtl"
     >
-    <link
-    href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-    />
-    <section className="relative overflow-hidden bg-gradient-to-bl from-blue-50 via-white to-white px-6 py-24 text-center">
-    <div className="absolute top-0 left-0 w-72 h-72 bg-blue-100 rounded-full opacity-30 -translate-x-1/2 -translate-y-1/2"/>
-    <div className="absolue bottom-0 right-0 w-96 h-96 bg-blue-50 rounded-full opacity-40 translate-x-1/3 translate-y-1/3"/>
+    
+    <section className="relative overflow-hidden bg-gradient-to-bl from-blue-50 via-white to-white px-6 py-12 text-center h-20">
 
     <div className="relative max-w-2xl mx-auto">
     <div className="inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
