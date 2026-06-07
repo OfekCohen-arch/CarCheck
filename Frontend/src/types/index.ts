@@ -6,3 +6,16 @@ export interface Answer {
   maxAge?: string;
   maxKm?: string;
 }
+export interface Car {
+  name: string;
+  years: string;
+  priceRange: string;
+  avgKm: string;
+  reliability: number;
+  fuelEconomy: number;
+  comfort: number;
+  pros: string[];
+  cons: string[];
+  bestFor: string;
+  score: number;
+}

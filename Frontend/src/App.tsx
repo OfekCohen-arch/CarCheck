@@ -4,6 +4,7 @@ import { HomePage } from './pages/HomePage.tsx'
 import { AppHeader } from './components/layout/AppHeader.tsx'
 import { AppFooter } from './components/layout/AppFooter.tsx'
 import QuestionnairePage from './pages/QuestionnairePage.tsx'
+import ResultsPage from './pages/ResultsPage.tsx'
 function App() {
 
   return (
@@ -12,6 +13,7 @@ function App() {
     <Routes>
       <Route path='/' element={<HomePage/>}/>
       <Route path='/questionnaire' element={<QuestionnairePage/>}/>
+      <Route path='/results' element={<ResultsPage/>}/>
     </Routes>
     <AppFooter/>
     </BrowserRouter>
