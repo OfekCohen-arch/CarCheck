@@ -112,7 +112,7 @@ const carDatabase: Car[] = [
 
 function scoreCarForUser(car: Car, answers: Answer): number {
   let score = 50;
-  const budget = parseInt(answers.budget || "100000");
+  const budget = parseInt(answers.budget || "500000");
   const maxKm = parseInt(answers.maxKm || "999999");
   const maxAge = parseInt(answers.maxAge || "15");
 
