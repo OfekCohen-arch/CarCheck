@@ -39,7 +39,6 @@ export default function CarCheckPage() {
   const [loading, setLoading] = useState(false);
   const [analysis, setAnalysis] = useState<Analysis | null>(null);
   const [error, setError] = useState("");
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -86,8 +85,8 @@ export default function CarCheckPage() {
       <div className="max-w-lg mx-auto px-4 py-8">
         <div className="bg-white rounded-3xl border border-gray-100 p-6 mb-6 shadow-sm">
           <h2 className="text-lg font-bold text-gray-800 mb-5">פרטי הרכב</h2>
-
-          <div className="flex flex-col gap-4">
+          
+          <div className="flex flex-col gap-4"> 
             <div className="grid grid-cols-2 gap-3">
               <div>
                 <label className="text-xs text-gray-400 font-semibold mb-1 block">יצרן</label>

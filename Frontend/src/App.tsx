@@ -6,6 +6,7 @@ import { AppFooter } from './components/layout/AppFooter.tsx'
 import QuestionnairePage from './pages/QuestionnairePage.tsx'
 import ResultsPage from './pages/ResultsPage.tsx'
 import CarCheckPage from './pages/CarCheckPage.tsx'
+import { PlateCheckPage } from './pages/PlateCheckPage.tsx'
 function App() {
 
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path='/questionnaire' element={<QuestionnairePage/>}/>
       <Route path='/results' element={<ResultsPage/>}/>
       <Route path='/car-check' element={<CarCheckPage/>}/>
+      <Route path='/plate-check' element={<PlateCheckPage/>}/>
     </Routes>
     <AppFooter/>
     </BrowserRouter>

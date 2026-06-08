@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom"
+
 const steps = [
     {
     number: "01",
@@ -16,6 +17,7 @@ const steps = [
     description: 'הזן פרטי רכב וקבל ציון וניתוח AI מפורט'
     }
 ]
+
 const features = [
     {
     icon:'🎯',
@@ -33,11 +35,12 @@ const features = [
     description: 'verdict  כדאי לקנות" או "תמשיך לחפש" — עם הסבר'
     },
     {
-    icon:"",
+    icon:"📋", // הוספתי אייקון חסר לצ'קליסט
     title:"צ'קליסט בדיקה",
     description: "מה לבדוק לפני שאתה חותם - כדי שלא תתחרט אחרי"
     }
 ]
+
 export function HomePage(){
     const navigate = useNavigate()
     return (
@@ -46,7 +49,8 @@ export function HomePage(){
     dir="rtl"
     >
     
-    <section className="relative overflow-hidden bg-gradient-to-bl from-blue-50 via-white to-white px-6 py-12 text-center h-20">
+    {/* תיקון: הוסר h-20 ובמקומו יש py-20 לגובה דינמי ונושם */}
+    <section className="relative overflow-hidden bg-gradient-to-bl from-blue-50 via-white to-white px-6 py-20 text-center">
 
     <div className="relative max-w-2xl mx-auto">
     <div className="inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
@@ -63,23 +67,30 @@ export function HomePage(){
     ואומר לך בדיוק אם זו עסקה טובה - או לא.
     </p>
     <div className="flex flex-col sm:flex-row gap-4 justify-center">
+    {/* תיקון: שונה מ-translation-all ל-transition-all */}
     <button
     onClick={()=>navigate("/questionnaire")}
-    className="bg-blue-600 text-white px-8 py-4 rounded-2xl text-lg font-bold hover:bg-blue-700 translation-all hover:scale-105 shadow-lg shadow-blue-200"
+    className="bg-blue-600 text-white px-8 py-4 rounded-2xl text-lg font-bold hover:bg-blue-700 transition-all hover:scale-105 shadow-lg shadow-blue-200"
     >
- מצא לי רכב מתאים ←
+        מצא לי רכב מתאים ←
     </button>
     <button
     onClick={()=>navigate("/car-check")}
     className="bg-white text-blue-600 border-2 border-blue-200 px-8 py-4 rounded-2xl text-lg font-bold hover:border-blue-400 transition-all"
     >
-        בדוק רכב ספציפי
+        בדוק רכב ספציפי 
+    </button>
+    <button
+    onClick={()=>navigate("/plate-check")}
+    className="bg-white text-blue-600 border-2 border-blue-200 px-8 py-4 rounded-2xl text-lg font-bold hover:border-blue-400 transition-all"
+    >
+        בדוק רכב לפי מספר רישוי 
     </button>
     </div>
     </div>
     </section>
 
-    <section className="px-6 py-20 max-w-4xl mx-auto">
+    <section className="px-6 py-10 max-w-4xl mx-auto">
     <h2 className="text-3xl font-black text-gray-900 text-center mb-4">
         איך זה עובד?
     </h2>
@@ -100,10 +111,11 @@ export function HomePage(){
      ))}
     </div>
     </section>
+
     <section className="bg-gray-50 px-6 py-20">
     <div className="max-w-4xl mx-auto">
     <h2 className="text-3xl font-black text-gray-900 text-center mb-14">
-מה CarCheck עושה בשבילך
+        מה CarCheck עושה בשבילך
     </h2>
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
     {features.map((feature)=>(
@@ -123,20 +135,20 @@ export function HomePage(){
     </div>
     </div>
     </section>
+
     <section className="px-6 py-20 text-center">
         <div className="max-w-xl mx-auto bg-blue-600 rounded-3xl p-12 text-white">  
         <h2 className="text-3xl font-black mb-4">מוכן לקנות רכב בחוכמה?</h2>
         <p className="text-blue-100 mb-8">
-אל תקנה רכב בלי לבדוק אותו קודם - זה לוקח 2 דקות
+            אל תקנה רכב בלי לבדוק אותו קודם - זה לוקח 2 דקות
         </p>
         <button 
         onClick={()=>navigate("/questionnaire")}
         className="bg-white text-blue-600 px-8 py-4 rounded-2xl text-lg font-bold hover:bg-blue-50 transition-all hover:scale-105"
         >
- התחל עכשיו - בחינם 🚗
+            התחל עכשיו - בחינם 🚗
         </button>
         </div>
-      
     </section>
     </div>
     )
