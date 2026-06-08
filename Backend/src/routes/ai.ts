@@ -4,8 +4,8 @@ import OpenAI from "openai";
 const router = express.Router();
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+apiKey: process.env.OPENAI_API_KEY
+})
 
 router.post("/analyze", async (req, res) => {
   const { make, model, year, km, price } = req.body;

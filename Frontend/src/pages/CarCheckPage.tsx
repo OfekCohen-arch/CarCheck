@@ -54,7 +54,7 @@ export default function CarCheckPage() {
     setAnalysis(null);
 
     try {
-      const res = await fetch("http://localhost:3000/api/ai/analyze", {
+      const res = await fetch("http://localhost:3030/analyze", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
