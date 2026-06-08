@@ -19,3 +19,12 @@ export interface Car {
   bestFor: string;
   score: number;
 }
+export interface Analysis {
+  verdict: string;
+  score: number;
+  priceAssessment: string;
+  kmAssessment: string;
+  summary: string;
+  warnings: string[];
+  tips: string[];
+}
