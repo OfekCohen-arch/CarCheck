@@ -23,9 +23,13 @@ export default function ResultsPage() {
   const answers: Answer = location.state?.answers || {};
 
   const [scoredCars, setScoredCars] = useState<Car[]>([]);
+  const [hasLoaded, setHasLoaded] = useState(false)
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    if (answers) loadResults();
+    if (answers && !hasLoaded){
+        setHasLoaded(true)
+         loadResults();
+        }
   }, []);
   async function loadResults() {
     try {
