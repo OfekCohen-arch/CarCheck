@@ -49,29 +49,20 @@ export  function PlateCheckPage() {
 
     try {
       setStep("gov");
-      const plateRes = await fetch(
-        `http://localhost:3030/plate/${plate.replace(/-/g, "")}`
-      );
-      const govData = await plateRes.json();
-      if (govData.error) throw new Error("רכב לא נמצא במאגר");
-      setCarData(govData);
-
-      setStep("ai");
-      const analyzeRes = await fetch("http://localhost:3030/api/ai/analyze", {
+      const res = await fetch("http://localhost:3030/check", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          make: govData.make,
-          model: govData.model,
-          year: govData.year,
-          km,
-          price,
-        }),
-      });
-      const aiData = await analyzeRes.json();
-      if (aiData.error) throw new Error(aiData.error);
-      setAnalysis(aiData);
-      setStep("done");
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({plate,km,price}),
+      })
+
+      setStep('ai')
+      const {carData, analysis} = await res.json()
+      if(carData.error) throw new Error('רכב לא נמצא במאגר')
+      if(analysis.error) throw new Error(analysis.error)
+
+      setCarData(carData)
+      setAnalysis(analysis)
+      setStep('done')
     } catch (err: any) {
       setError(err.message || "שגיאה — נסה שוב");
       setStep("form");
