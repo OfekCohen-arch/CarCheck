@@ -9,7 +9,7 @@ return(
     rel="stylesheet"
     />
     <nav className="border-b border-gray-100 px-6 py-4 flex items-center justify-between">
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2 cursor-pointer" onClick={()=>navigate('/')}>
     <span className="text-2xl font-black text-blue-600">Car</span>
     <span className="text-2xl font-black text-gray-800">Check</span>
     <span className="text-xl">🚗</span>
