@@ -49,3 +49,10 @@ export interface CarGovData {
   seats: number | null;
   weight: number | null;
 }
+export interface CarFormData {
+  make: string;
+  model: string;
+  year: string;
+  km: string;
+  price: string;
+}
